@@ -27,3 +27,21 @@ dotnet new webapi -o API --use-controllers
 dotnet sln add API
 code . # open the project in Visual Studio Code
 ```
+
+## 2.7. Adding VS Code extensions
+
+VS Code extensions:
+
+1. C#
+2. C# Extensions
+3. Material Icon Theme
+4. NuGet Gallery
+5. SQLite
+6. Auto Rename Tag
+
+`>reload` -> Developer: Reload Window
+
+Required assets to build and debug are missing from 'ReStore'. Add them? `Yes`
+(if this prompt disappears, then reload the window)
+
+enable `File -> Auto Save`
