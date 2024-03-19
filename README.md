@@ -45,3 +45,7 @@ Required assets to build and debug are missing from 'ReStore'. Add them? `Yes`
 (if this prompt disappears, then reload the window)
 
 enable `File -> Auto Save`
+
+## 2.8. What’s in the Web API template
+
+Settings -> exclude -> `Files: Exclude` -> `Add Pattern:` -> `**/obj` & `**/bin`
