@@ -49,3 +49,14 @@ enable `File -> Auto Save`
 ## 2.8. What’s in the Web API template
 
 Settings -> exclude -> `Files: Exclude` -> `Add Pattern:` -> `**/obj` & `**/bin`
+
+## 2.12. Creating an Entity Framework Migration
+
+```bash
+dotnet tool install --global dotnet-ef
+dotnet tool list -g
+dotnet tool update --global dotnet-ef
+
+dotnet ef migrations add InitialCreate -o Data/Migrations
+dotnet ef database update
+```
