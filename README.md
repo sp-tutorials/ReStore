@@ -14,3 +14,16 @@ git init
 dotnet new gitignore
 git add . && git commit -m "Add README.md and .gitignore"
 ```
+
+# Section 2: API Basics
+
+## 2.6. Creating the .Net solution and API project
+
+```bash
+dotnet new list
+
+dotnet new sln
+dotnet new webapi -o API --use-controllers
+dotnet sln add API
+code . # open the project in Visual Studio Code
+```
