@@ -68,3 +68,9 @@ dotnet ef database drop
 
 dotnet watch --no-hot-reload
 ```
+
+## 2.16. Using async methods when querying a database.
+
+Extensions -> C# Extensions -> Extension Settings -> Csharpextensions ->
+> Private Member Prefix -> `_`  
+> [ ] Use This For Ctor Assignments
