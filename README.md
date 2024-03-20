@@ -94,3 +94,18 @@ In this section
 * Creating a basic Web API
 * Using Entity Framework
 * Using git for source control
+
+# Section 3: React Basics
+
+Libraries used alongside React:
+
+* Material UI
+* Axios
+* Redux
+* Forms (React-hook-form)
+* React-Router
+
+**Material UI v5**  
+instead of `import { Container } from "@material-ui/core";`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+use `import { Container } from "@mui/material";`
