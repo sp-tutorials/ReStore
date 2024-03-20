@@ -133,3 +133,11 @@ npm install @mui/icons-material
 ## 3.32. Installing and using React dev tools
 
 https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
+## 3.38. Section 3 Summary
+
+In this section
+
+* What is React?
+* Vite
+* Material UI
