@@ -74,3 +74,11 @@ dotnet watch --no-hot-reload
 Extensions -> C# Extensions -> Extension Settings -> Csharpextensions ->
 > Private Member Prefix -> `_`  
 > [ ] Use This For Ctor Assignments
+
+## 2.17. Saving our code into source control
+
+```bash
+dotnet new -l
+
+dotnet new gitignore
+```
