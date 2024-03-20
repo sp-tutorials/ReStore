@@ -150,3 +150,11 @@ In this section
 
 * Installing and using React Router
 * Adding axios
+
+## 4.40. Setting up React Router
+
+https://reactrouter.com/en/main
+
+```bash
+npm install react-router-dom
+```
