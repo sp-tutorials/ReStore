@@ -82,3 +82,15 @@ dotnet new -l
 
 dotnet new gitignore
 ```
+
+## 2.18. Summary of section 2
+
+In this section
+
+* What is .Net?
+* What is an API?
+* Using the dotnet CLI
+* What's in the project?
+* Creating a basic Web API
+* Using Entity Framework
+* Using git for source control
