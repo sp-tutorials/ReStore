@@ -94,3 +94,50 @@ In this section
 * Creating a basic Web API
 * Using Entity Framework
 * Using git for source control
+
+# Section 3: React Basics
+
+Libraries used alongside React:
+
+* Material UI
+* Axios
+* Redux
+* Forms (React-hook-form)
+* React-Router
+
+**Material UI v5**  
+instead of `import { Container } from "@material-ui/core";`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+use `import { Container } from "@mui/material";`
+
+## 3.20. Creating the react application
+
+```bash
+npm create vite@latest
+```
+
+## 3.27. Adding a Typescript interface for the product
+
+https://www.google.com/search?q=json+to+ts
+
+## 3.30. Adding the Material UI styling framework
+
+https://mui.com/material-ui/getting-started/installation/
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+```
+
+## 3.32. Installing and using React dev tools
+
+https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
+## 3.38. Section 3 Summary
+
+In this section
+
+* What is React?
+* Vite
+* Material UI
