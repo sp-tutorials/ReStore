@@ -60,3 +60,11 @@ dotnet tool update --global dotnet-ef
 dotnet ef migrations add InitialCreate -o Data/Migrations
 dotnet ef database update
 ```
+
+## 2.14. Using the Program.cs class to migrate and seed the data on app startup
+
+```bash
+dotnet ef database drop
+
+dotnet watch --no-hot-reload
+```
