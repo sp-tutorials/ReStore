@@ -109,3 +109,9 @@ Libraries used alongside React:
 instead of `import { Container } from "@material-ui/core";`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 use `import { Container } from "@mui/material";`
+
+## 3.20. Creating the react application
+
+```bash
+npm create vite@latest
+```
