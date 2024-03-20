@@ -115,3 +115,7 @@ use `import { Container } from "@mui/material";`
 ```bash
 npm create vite@latest
 ```
+
+## 3.27. Adding a Typescript interface for the product
+
+https://www.google.com/search?q=json+to+ts
