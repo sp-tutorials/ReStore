@@ -119,3 +119,13 @@ npm create vite@latest
 ## 3.27. Adding a Typescript interface for the product
 
 https://www.google.com/search?q=json+to+ts
+
+## 3.30. Adding the Material UI styling framework
+
+https://mui.com/material-ui/getting-started/installation/
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+```
