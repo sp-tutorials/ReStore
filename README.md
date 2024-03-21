@@ -181,3 +181,7 @@ In this section
 ```bash
 npm install react-toastify
 ```
+
+## 5.59. Setting up linting
+
+`ESLint` VS Code extension
