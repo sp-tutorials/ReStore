@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Product } from "../../app/models/product.ts";
 import agent from "../../app/api/agent.ts";
 import NotFound from "../../app/errors/NotFound.tsx";
+import LoadingComponent from "../../app/layout/LoadingComponent.tsx";
 
 export default function ProductDetails() {
   const {id} = useParams<{ id: string }>();
@@ -17,7 +18,7 @@ export default function ProductDetails() {
       .finally(() => setLoading(false))
   }, [id]);
 
-  if (loading) return <h3>Loading ...</h3>
+  if (loading) return <LoadingComponent message='Loading product...' />
 
   if (!product) return <NotFound />
 
