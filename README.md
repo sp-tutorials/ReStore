@@ -175,3 +175,9 @@ In this section
 * Http response errors
 * Client side Error handling
 * Debugging
+
+## 5.52. Adding toast notifications
+
+```bash
+npm install react-toastify
+```
