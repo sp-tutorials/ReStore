@@ -164,3 +164,14 @@ npm install react-router-dom
 ```bash
 npm install axios
 ```
+
+# Section 5: Error handling
+
+In this section
+
+* Error handling and exceptions
+* Developer exception page
+* Middleware
+* Http response errors
+* Client side Error handling
+* Debugging
