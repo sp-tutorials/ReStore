@@ -158,3 +158,9 @@ https://reactrouter.com/en/main
 ```bash
 npm install react-router-dom
 ```
+
+## 4.43. Fetching a product on component load
+
+```bash
+npm install axios
+```
