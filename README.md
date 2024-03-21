@@ -141,3 +141,26 @@ In this section
 * What is React?
 * Vite
 * Material UI
+
+# Section 4: React Router
+
+## 4.39. Section 4 Introduction
+
+In this section
+
+* Installing and using React Router
+* Adding axios
+
+## 4.40. Setting up React Router
+
+https://reactrouter.com/en/main
+
+```bash
+npm install react-router-dom
+```
+
+## 4.43. Fetching a product on component load
+
+```bash
+npm install axios
+```
