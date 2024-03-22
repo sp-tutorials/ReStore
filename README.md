@@ -185,3 +185,14 @@ npm install react-toastify
 ## 5.59. Setting up linting
 
 `ESLint` VS Code extension
+
+# Section 6: Adding the shopping cart feature
+
+In this section
+
+* Adding the Shopping cart/basket feature
+* Where to store the basket?
+* EF Relationships
+* Shaping data
+* Using React Context
+* App initialisation
