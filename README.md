@@ -196,3 +196,10 @@ In this section
 * Shaping data
 * Using React Context
 * App initialisation
+
+## 6.63. EF Relationships
+
+```bash
+dotnet ef migrations add BasketEntityAdded
+dotnet ef migrations remove
+```
