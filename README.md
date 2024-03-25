@@ -250,3 +250,11 @@ Redux Toolkit
 * Good defaults for store setup
 * Most commonly used Redux add-ons built in
 * Less boilerplate
+
+## 7.85. Installing and using Redux
+
+https://redux.js.org/style-guide/
+
+```bash
+npm install redux react-redux
+```
