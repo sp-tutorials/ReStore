@@ -209,3 +209,44 @@ dotnet ef migrations remove
 ```bash
 npm install @mui/lab @mui/material
 ```
+
+# Section 7: Redux
+
+In this section
+
+* Redux
+* React-Redux
+* Redux Toolkit
+* Redux Dev tools
+
+Redux - Store
+
+* Contains the app state
+* One store per app
+* Each store can have many 'reducers' or 'slices' of state
+
+Redux - Provider
+
+Redux flow  
+Store -> Provider -> App -> Components -> Actions -> Reducers -> Store
+
+Redux - Reducer
+
+* A reducer is a function
+* It takes the current state and an action and returns a new state result  
+  `(state, action) => newState`
+
+Redux Best Practices
+
+* Do not mutate state
+* Reducers must not have side effects
+* Do not have non-serializable values in State or Actions (=> no class instances or functions inside state)
+* Only 1 store per app
+
+Redux Toolkit
+
+* Simplifies Redux code
+* Opinionated
+* Good defaults for store setup
+* Most commonly used Redux add-ons built in
+* Less boilerplate
