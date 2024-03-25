@@ -264,3 +264,7 @@ npm install redux react-redux
 ```bash
 npm install @reduxjs/toolkit
 ```
+
+## 7.89. Using redux dev tools
+
+https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
