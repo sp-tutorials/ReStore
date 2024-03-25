@@ -258,3 +258,9 @@ https://redux.js.org/style-guide/
 ```bash
 npm install redux react-redux
 ```
+
+## 7.88. Using Redux Toolkit
+
+```bash
+npm install @reduxjs/toolkit
+```
