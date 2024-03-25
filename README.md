@@ -185,3 +185,27 @@ npm install react-toastify
 ## 5.59. Setting up linting
 
 `ESLint` VS Code extension
+
+# Section 6: Adding the shopping cart feature
+
+In this section
+
+* Adding the Shopping cart/basket feature
+* Where to store the basket?
+* EF Relationships
+* Shaping data
+* Using React Context
+* App initialisation
+
+## 6.63. EF Relationships
+
+```bash
+dotnet ef migrations add BasketEntityAdded
+dotnet ef migrations remove
+```
+
+## 6.70. Adding the axios methods for the basket
+
+```bash
+npm install @mui/lab @mui/material
+```
