@@ -203,3 +203,9 @@ In this section
 dotnet ef migrations add BasketEntityAdded
 dotnet ef migrations remove
 ```
+
+## 6.70. Adding the axios methods for the basket
+
+```bash
+npm install @mui/lab @mui/material
+```
