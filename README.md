@@ -268,3 +268,12 @@ npm install @reduxjs/toolkit
 ## 7.89. Using redux dev tools
 
 https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+
+# Section 8: Paging, Sorting, Filtering
+
+In this section
+
+* Sorting
+* Filtering
+* Searching
+* Paging
