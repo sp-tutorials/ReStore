@@ -1,4 +1,3 @@
-using System.Text.Json;
 using API.Data;
 using API.Entities;
 using API.Extensions;
@@ -17,7 +16,7 @@ public class ProductsController : BaseApiController
     }
 
     [HttpGet]
-    public async Task<ActionResult<PagedList<Product>>> GetProducts(ProductParams productParams)
+    public async Task<ActionResult<PagedList<Product>>> GetProducts([FromQuery] ProductParams productParams)
     {
         var query = _context.Products
             .Sort(productParams.OrderBy)
@@ -28,7 +27,7 @@ public class ProductsController : BaseApiController
         var products = await PagedList<Product>.ToPagedList(query,
             productParams.PageNumber, productParams.PageSize);
 
-        Response.Headers.Add("Pagination", JsonSerializer.Serialize(products.MetaData));
+        Response.AddPaginationHeader(products.MetaData);
 
         return products;
     }
