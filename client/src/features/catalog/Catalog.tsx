@@ -13,8 +13,9 @@ import {
   Paper,
   Radio,
   RadioGroup,
-  TextField, Typography
+  Typography
 } from "@mui/material";
+import ProductSearch from "./ProductSearch.tsx";
 
 const sortOptions = [
   {value: 'name', label: 'Alphabetical'},
@@ -41,11 +42,7 @@ export default function Catalog() {
     <Grid container spacing={4}>
       <Grid item xs={3}>
         <Paper sx={{mb: 2}}>
-          <TextField
-            label='Search products'
-            variant='outlined'
-            fullWidth
-          />
+          <ProductSearch />
         </Paper>
         <Paper sx={{mb: 2, p: 2}}>
           <FormControl>
