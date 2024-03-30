@@ -301,3 +301,9 @@ What is ASP.NET Identity?
 * Can use external providers also
 
 Password hashing
+
+## 9.124. Adding the entity configuration and migration
+
+```bash
+dotnet ef migrations add IdentityAdded
+```
