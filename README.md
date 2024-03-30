@@ -277,3 +277,27 @@ In this section
 * Filtering
 * Searching
 * Paging
+
+# Section 9: Identity
+
+In this section
+
+* Setting up ASP.NET Identity
+* Using Entity Framework with Identity
+* JWT Tokens
+* Using forms in React
+* Validating form input
+* App initialisation
+* Transferring anonymous basket to logged in user
+
+What is ASP.NET Identity?
+
+* Membership system for .Net
+* Includes:
+    * Password hashing
+    * Password validation
+    * User storage
+    * Claims management
+* Can use external providers also
+
+Password hashing
