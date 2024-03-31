@@ -1,5 +1,6 @@
 import Header from "./Header.tsx";
-import { Container, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Container, CssBaseline } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
