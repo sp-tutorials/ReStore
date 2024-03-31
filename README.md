@@ -307,3 +307,9 @@ Password hashing
 ```bash
 dotnet ef migrations add IdentityAdded
 ```
+
+## 9.135. Adding React hook form
+
+```bash
+npm install react-hook-form
+```
