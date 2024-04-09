@@ -5,18 +5,32 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Alert, AlertTitle, List, ListItem, ListItemText, Paper } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Paper } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import agent from "../../app/api/agent.ts";
-import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Register() {
-  const [validationErrors, setValidationErrors] = useState([]);
-  const {register, handleSubmit, formState: {isSubmitting, errors, isValid}} = useForm({
+  const navigate = useNavigate();
+  const {register, handleSubmit, setError, formState: {isSubmitting, errors, isValid}} = useForm({
     mode: 'onTouched'
   });
+
+  function handleApiErrors(errors: any) {
+    if (errors) {
+      errors.forEach((error: string) => {
+        if (error.includes('Password')) {
+          setError('password', {message: error})
+        } else if (error.includes('Email')) {
+          setError('email', {message: error})
+        } else if (error.includes('Username')) {
+          setError('username', {message: error})
+        }
+      });
+    }
+  }
 
   return (
     <Container component={Paper} maxWidth="sm"
@@ -29,7 +43,11 @@ export default function Register() {
       </Typography>
       <Box component="form"
            onSubmit={handleSubmit(data => agent.Account.register(data)
-             .catch(error => setValidationErrors(error)))}
+             .then(() => {
+               toast.success('Registration successful - you can now login');
+               navigate('/login');
+             })
+             .catch(error => handleApiErrors(error)))}
            noValidate sx={{mt: 1}}>
         <TextField
           margin="normal"
@@ -44,7 +62,13 @@ export default function Register() {
           margin="normal"
           fullWidth
           label="Email"
-          {...register('email', {required: 'Email is required'})}
+          {...register('email', {
+            required: 'Email is required',
+            pattern: {
+              value: /^\w+[\w-.]*@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/,
+              message: 'Not a valid email address'
+            }
+          })}
           error={!!errors.email}
           helperText={errors?.email?.message as string}
         />
@@ -53,22 +77,16 @@ export default function Register() {
           fullWidth
           label="Password"
           type="password"
-          {...register('password', {required: 'Password is required'})}
+          {...register('password', {
+            required: 'Password is required',
+            pattern: {
+              value: /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/,
+              message: 'password does not meet complexity requirements'
+            }
+          })}
           error={!!errors.password}
           helperText={errors?.password?.message as string}
         />
-        {validationErrors.length > 0 &&
-            <Alert severity='error'>
-                <AlertTitle>Validation Errors</AlertTitle>
-                <List>
-                  {validationErrors.map((error) => (
-                    <ListItem key={error}>
-                      <ListItemText>{error}</ListItemText>
-                    </ListItem>
-                  ))}
-                </List>
-            </Alert>
-        }
         <LoadingButton loading={isSubmitting}
                        disabled={!isValid}
                        type="submit"

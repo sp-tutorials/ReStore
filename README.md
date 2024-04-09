@@ -313,3 +313,7 @@ dotnet ef migrations add IdentityAdded
 ```bash
 npm install react-hook-form
 ```
+
+## 9.142. Adding the registration validators
+
+https://regexlib.com/
