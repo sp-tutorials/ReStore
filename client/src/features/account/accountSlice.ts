@@ -4,6 +4,7 @@ import { createAsyncThunk, createSlice, isAnyOf } from "@reduxjs/toolkit";
 import agent from "../../app/api/agent.ts";
 import { router } from "../../app/router/Routes.tsx";
 import { toast } from "react-toastify";
+import { setBasket } from "../basket/basketSlice.ts";
 
 interface AccountState {
   user: User | null;
@@ -17,7 +18,9 @@ export const signInUser = createAsyncThunk<User, FieldValues>(
   'account/signInUser',
   async (data, thunkApi) => {
     try {
-      const user = await agent.Account.login(data);
+      const userDto = await agent.Account.login(data);
+      const {basket, ...user} = userDto;
+      if (basket) thunkApi.dispatch(setBasket(basket));
       localStorage.setItem('user', JSON.stringify(user));
       return user;
     } catch (e: any) {
@@ -31,7 +34,9 @@ export const fetchCurrentUser = createAsyncThunk<User>(
   async (_, thunkApi) => {
     thunkApi.dispatch(setUser(JSON.parse(localStorage.getItem('user')!)))
     try {
-      const user = await agent.Account.currentUser();
+      const userDto = await agent.Account.currentUser();
+      const {basket, ...user} = userDto;
+      if (basket) thunkApi.dispatch(setBasket(basket));
       localStorage.setItem('user', JSON.stringify(user));
       return user;
     } catch (e: any) {
