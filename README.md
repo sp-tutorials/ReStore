@@ -327,3 +327,10 @@ In this section
 * Adding a multi step form for checkout
 * Order submission
 * Challenge
+
+# 10.150. Refactoring identity to use an int
+
+```bash
+dotnet ef database drop # or just delete store.db
+dotnet ef migrations add OrderEntityAdded -o Data/Migrations
+```
