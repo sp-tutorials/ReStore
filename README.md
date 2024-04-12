@@ -317,3 +317,13 @@ npm install react-hook-form
 ## 9.142. Adding the registration validators
 
 https://regexlib.com/
+
+# Section 10: Adding the checkout feature
+
+In this section
+
+* Creating Order Entities
+* Creating re-usable text inputs
+* Adding a multi step form for checkout
+* Order submission
+* Challenge
