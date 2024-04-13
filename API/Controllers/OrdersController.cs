@@ -20,19 +20,19 @@ public class OrdersController : BaseApiController
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<Order>>> GetOrders()
+    public async Task<ActionResult<List<OrderDto>>> GetOrders()
     {
         return await _content.Orders
-            .Include(o => o.OrderItems)
+            .ProjectOrderToOrderDto()
             .Where(x => x.BuyerId == User.Identity.Name)
             .ToListAsync();
     }
 
     [HttpGet("{id}", Name = "GetOrder")]
-    public async Task<ActionResult<Order>> GetOrder(int id)
+    public async Task<ActionResult<OrderDto>> GetOrder(int id)
     {
         return await _content.Orders
-            .Include(x => x.OrderItems)
+            .ProjectOrderToOrderDto()
             .Where(x => x.BuyerId == User.Identity.Name && x.Id == id)
             .FirstOrDefaultAsync();
     }
