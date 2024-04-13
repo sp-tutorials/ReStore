@@ -334,3 +334,9 @@ In this section
 dotnet ef database drop # or just delete store.db
 dotnet ef migrations add OrderEntityAdded -o Data/Migrations
 ```
+
+# 10.159. Adding a validation library
+
+```bash
+npm install @hookform/resolvers yup
+```
