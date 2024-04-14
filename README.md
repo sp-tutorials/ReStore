@@ -391,3 +391,9 @@ Strong Customer Authentication (SCA)
 Without SCA - USA/Canada only
 
 With SCA - Payment Intent
+
+## 11.169. Setting up stripe
+
+```bash
+dotnet ef migrations add PaymentIntentAdded
+```
