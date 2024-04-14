@@ -340,3 +340,54 @@ dotnet ef migrations add OrderEntityAdded -o Data/Migrations
 ```bash
 npm install @hookform/resolvers yup
 ```
+
+# Section 11: Payments
+
+In this section
+
+* Taking payments
+* PCI Compliance
+* Strong customer authentication
+* Adding Stripe to the API and Client
+* Webhooks
+* Safe storage of secrets in the code
+
+Payment Card Industry Data Security Standard (PCI DSS)
+
+* Set of industry standards
+* Designed to protect payment card data
+* Increased protection for customers and reduced risk of data breaches involving personal card data
+
+PCI Compliance
+
+* Building and maintaining a secure network
+* Protecting Cardholder data
+* Maintaining a vulnerability management program
+* Implementing strong access control measures
+* Regularly monitor and test networks
+* Maintain an information security policy
+
+PCI non-compliance
+
+* Monthly penalties ($5,000 to $100,000)
+* Infringement consequences ($50 to $90 per cardholder)
+* Compensation costs
+* Legal action
+* Damaged reputation
+* Revenue loss
+* Federal audits
+
+Payment Card Processors (Stripe)
+
+Strong Customer Authentication (SCA)
+
+* EU Standards for authenticating online payments
+    * Requires 2 of the following 3 elements:
+        * Something the customer knows (PW/Pin)
+        * Something the customer has (phone/HW token)
+        * Something the customer is (biometric)
+* Banks will decline payments that require SCA and do not meet this criteria
+
+Without SCA - USA/Canada only
+
+With SCA - Payment Intent
