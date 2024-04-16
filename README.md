@@ -403,3 +403,12 @@ dotnet ef migrations add PaymentIntentAdded
 ```bash
 npm install --save @stripe/react-stripe-js @stripe/stripe-js
 ```
+
+## 11.180. Adding a webhook
+
+https://docs.stripe.com/stripe-cli
+
+```bash
+docker run --network="host" --rm -it stripe/stripe-cli:latest --api-key $STRIPE_API_KEY 
+docker run --network="host" --rm -it stripe/stripe-cli:latest --api-key $STRIPE_API_KEY listen -f http://localhost:5000/api/payments/webhook -e charge.succeeded
+``` 
