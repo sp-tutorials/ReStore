@@ -3,9 +3,27 @@ import { useFormContext } from "react-hook-form";
 import AppTextInput from "../../app/components/AppTextInput.tsx";
 import { StripeInput } from "./StripeInput.tsx";
 import { CardCvcElement, CardExpiryElement, CardNumberElement } from "@stripe/react-stripe-js";
+import { useState } from "react";
+import { StripeElementType } from "@stripe/stripe-js";
 
 export default function PaymentForm() {
   const {control} = useFormContext();
+  const [cardState, setCardState] = useState<{
+    elementError: { [key in StripeElementType]?: string }
+  }>({elementError: {}});
+  const [cardComplete, setCardComplete] = useState<any>({cardNumber: false, cardExpiry: false, cardCvc: false});
+
+  function onCardInputChange(event: any) {
+    setCardState({
+      ...cardState,
+      elementError: {
+        ...cardState.elementError,
+        [event.elementType]: event.error?.message
+      }
+    })
+    setCardComplete({...cardComplete, [event.elementType]: event.complete})
+  }
+
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -17,6 +35,9 @@ export default function PaymentForm() {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            onChange={onCardInputChange}
+            error={!!cardState.elementError.cardNumber}
+            helperText={cardState.elementError.cardNumber}
             id="cardNumber"
             label="Card number"
             fullWidth
@@ -33,6 +54,9 @@ export default function PaymentForm() {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            onChange={onCardInputChange}
+            error={!!cardState.elementError.cardExpiry}
+            helperText={cardState.elementError.cardExpiry}
             id="expDate"
             label="Expiry date"
             fullWidth
@@ -49,9 +73,11 @@ export default function PaymentForm() {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            onChange={onCardInputChange}
+            error={!!cardState.elementError.cardCvc}
+            helperText={cardState.elementError.cardCvc}
             id="cvv"
             label="CVV"
-            helperText="Last three digits on signature strip"
             fullWidth
             autoComplete="cc-csc"
             variant="outlined"
