@@ -397,3 +397,9 @@ With SCA - Payment Intent
 ```bash
 dotnet ef migrations add PaymentIntentAdded
 ```
+
+## 11.173. Adding stripe to the client
+
+```bash
+npm install --save @stripe/react-stripe-js @stripe/stripe-js
+```
