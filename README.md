@@ -471,5 +471,16 @@ Docker extension by Microsoft
 
 ```bash
 docker build -t patrulescuronaldsandrino/restore .
-docker run --rm -it -p 8080:80 patrulescuronaldsandrino/restore
+docker run --rm -it -p 8080:8080 patrulescuronaldsandrino/restore
+# on linux
+docker run --add-host=host.docker.internal:host-gateway --rm -it -p 8080:8080 patrulescuronaldsandrino/restore
+```
+
+## 12.189. Deployment - connecting to the postgres in docker
+
+in `appsettings.json` change Server to host.docker.internal
+
+```bash
+docker login
+docker push patrulescuronaldsandrino/restore:latest
 ```
