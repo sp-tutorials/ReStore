@@ -448,3 +448,16 @@ https://vitejs.dev/guide/env-and-mode.html
 ```bash
 npm run build
 ```
+
+## 12.187. Switching to a production DB Server
+
+https://learn.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli
+
+```bash
+docker run --name postgres -e POSTGRES_USER=appuser -e POSTGRES_PASSWORD=secret -p 5432:5432 -d postgres:latest
+# inside API/ folder
+rm -r store.db Data/Migrations/
+dotnet ef migrations add PostgresIntial -o Data/Migrations
+```
+
+PostgreSQL extension from Chris Kolkman
