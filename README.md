@@ -423,3 +423,14 @@ dotnet user-secrets init
 dotnet user-secrets set "KEY" "VALUE"
 dotnet user-secrets list
 ```
+
+# Section 12: Publishing
+
+In this section
+
+* Create a production build of the React app
+* Host the react app on our API (Kestrel) server
+* Switch Database server to PostGreSQL
+* Setup and configure Heroku (actually an alternative to Heroku cuz it's no longer free)
+* Deploy the app
+* Troubleshoot app in production
