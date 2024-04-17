@@ -434,3 +434,9 @@ In this section
 * Setup and configure Heroku (actually an alternative to Heroku cuz it's no longer free)
 * Deploy the app
 * Troubleshoot app in production
+
+## 12.184. Home page design
+
+```bash
+npm install react-slick @types/react-slick slick-carousel
+```
