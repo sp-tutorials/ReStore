@@ -484,3 +484,11 @@ in `appsettings.json` change Server to host.docker.internal
 docker login
 docker push patrulescuronaldsandrino/restore:latest
 ```
+
+## 12.190. Deployment - Creating fly io launch config
+
+install fly and sign up
+
+```bash
+fly launch --image patrulescuronaldsandrino/restore:latest
+```
