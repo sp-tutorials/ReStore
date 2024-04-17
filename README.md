@@ -461,3 +461,15 @@ dotnet ef migrations add PostgresIntial -o Data/Migrations
 ```
 
 PostgreSQL extension from Chris Kolkman
+
+## 12.188. Deployment - Dockerising our app
+
+https://fly.io/docs/languages-and-frameworks/dockerfile/
+https://hub.docker.com/
+
+Docker extension by Microsoft
+
+```bash
+docker build -t patrulescuronaldsandrino/restore .
+docker run --rm -it -p 8080:80 patrulescuronaldsandrino/restore
+```
