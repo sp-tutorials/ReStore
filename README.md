@@ -498,7 +498,7 @@ fly launch --image patrulescuronaldsandrino/restore:latest
 ```bash
 fly secrets list
 fly secrets set StripeSettings__SecretKey=$STRIPE_API_KEY
-fly secrets set JWTSettings__Secret=REPLACE_ME
+fly secrets set JWTSettings__TokenKey=REPLACE_ME
 # rebuild and push to docker
 fly deploy
 ```
