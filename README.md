@@ -440,3 +440,11 @@ In this section
 ```bash
 npm install react-slick @types/react-slick slick-carousel
 ```
+
+## 12.185. Creating a react production build
+
+https://vitejs.dev/guide/env-and-mode.html
+
+```bash
+npm run build
+```
