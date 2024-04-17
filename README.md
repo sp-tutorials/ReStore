@@ -502,3 +502,9 @@ fly secrets set JWTSettings__Secret=REPLACE_ME
 # rebuild and push to docker
 fly deploy
 ```
+
+## 12.192. Deployment - Adding a github action
+
+https://github.com/docker/build-push-action
+
+add secrets to GitHub repository
