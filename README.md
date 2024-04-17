@@ -412,3 +412,14 @@ https://docs.stripe.com/stripe-cli
 docker run --network="host" --rm -it stripe/stripe-cli:latest --api-key $STRIPE_API_KEY 
 docker run --network="host" --rm -it stripe/stripe-cli:latest --api-key $STRIPE_API_KEY listen -f http://localhost:5000/api/payments/webhook -e charge.succeeded
 ``` 
+
+## 11.181. User secrets
+
+https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets#secret-manager
+
+```bash
+# inside API/
+dotnet user-secrets init
+dotnet user-secrets set "KEY" "VALUE"
+dotnet user-secrets list
+```
