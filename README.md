@@ -492,3 +492,13 @@ install fly and sign up
 ```bash
 fly launch --image patrulescuronaldsandrino/restore:latest
 ```
+
+## 12.191. Deployment - Adding the fly io secrets
+
+```bash
+fly secrets list
+fly secrets set StripeSettings__SecretKey=$STRIPE_API_KEY
+fly secrets set JWTSettings__Secret=REPLACE_ME
+# rebuild and push to docker
+fly deploy
+```
