@@ -534,3 +534,10 @@ In this section
 * Reusable form inputs
 * Using Roles in the app
 * Updating our published app in production
+
+## 13.201. Adding a create product endpoint
+
+```bash
+git checkout -b Inventory
+git push -u origin Inventory
+```
