@@ -508,3 +508,17 @@ fly deploy
 https://github.com/docker/build-push-action
 
 add secrets to GitHub repository
+
+## 12.193. Deployment - Automated deployment with github action and fly io
+
+https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
+
+```bash
+fly auth token
+fly apps list
+fly logs -a restore-sp
+fly proxy 6543:5432 -a restore-sp-db
+# the database is restore_sp?sslmode=disable
+fly secrets set StripeSettings__WhSecret=REPLACE_ME
+npm run build
+```
