@@ -522,3 +522,15 @@ fly proxy 6543:5432 -a restore-sp-db
 fly secrets set StripeSettings__WhSecret=REPLACE_ME
 npm run build
 ```
+
+# Section 13: Roles and CRUD operations
+
+In this section
+
+* Connecting GitHub to Heroku
+* Products CRUD operations
+* AutoMapper
+* Image upload
+* Reusable form inputs
+* Using Roles in the app
+* Updating our published app in production
