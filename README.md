@@ -541,3 +541,11 @@ In this section
 git checkout -b Inventory
 git push -u origin Inventory
 ```
+
+## 13.205. Adding an image service
+
+```bash
+dotnet user-secrets set "Cloudinary:CloudName" "REPLACE_ME"
+dotnet user-secrets set "Cloudinary:ApiKey" "REPLACE_ME"
+dotnet user-secrets set "Cloudinary:ApiSecret" "REPLACE_ME"
+```
