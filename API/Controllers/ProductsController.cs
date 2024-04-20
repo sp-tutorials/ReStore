@@ -3,6 +3,7 @@ using API.DTOs;
 using API.Entities;
 using API.Extensions;
 using API.RequestHelpers;
+using API.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +15,13 @@ public class ProductsController : BaseApiController
 {
     private readonly StoreContext _context;
     private readonly IMapper _mapper;
+    private readonly ImageService _imageService;
 
-    public ProductsController(StoreContext context, IMapper mapper)
+    public ProductsController(StoreContext context, IMapper mapper, ImageService imageService)
     {
         _context = context;
         _mapper = mapper;
+        _imageService = imageService;
     }
 
     [HttpGet]
@@ -59,9 +62,21 @@ public class ProductsController : BaseApiController
 
     [Authorize(Roles = "Admin")]
     [HttpPost]
-    public async Task<ActionResult<Product>> CreateProduct(CreateProductDto productDto)
+    // seems that [FromForm] is not needed in Swagger in this case
+    public async Task<ActionResult<Product>> CreateProduct([FromForm] CreateProductDto productDto)
     {
         var product = _mapper.Map<Product>(productDto);
+
+        if (productDto.File != null)
+        {
+            var imageResult = await _imageService.AddImageAsync(productDto.File);
+
+            if (imageResult.Error != null)
+                return BadRequest(new ProblemDetails { Title = imageResult.Error.Message });
+
+            product.PictureUrl = imageResult.SecureUrl.ToString();
+            product.PublicId = imageResult.PublicId;
+        }
 
         _context.Products.Add(product);
 
