@@ -555,3 +555,10 @@ dotnet user-secrets set "Cloudinary:ApiSecret" "REPLACE_ME"
 ```bash
 dotnet ef migrations add PublicIdAdded
 ```
+
+## 13.212. Adding a drop zone
+
+```bash
+# --save is no longer needed
+npm install --save react-dropzone
+```
