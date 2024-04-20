@@ -62,7 +62,6 @@ public class ProductsController : BaseApiController
 
     [Authorize(Roles = "Admin")]
     [HttpPost]
-    // seems that [FromForm] is not needed in Swagger in this case
     public async Task<ActionResult<Product>> CreateProduct([FromForm] CreateProductDto productDto)
     {
         var product = _mapper.Map<Product>(productDto);
@@ -89,7 +88,7 @@ public class ProductsController : BaseApiController
 
     [Authorize(Roles = "Admin")]
     [HttpPut]
-    public async Task<ActionResult> UpdateProduct(UpdateProductDto productDto)
+    public async Task<ActionResult<Product>> UpdateProduct([FromForm] UpdateProductDto productDto)
     {
         var product = await _context.Products.FindAsync(productDto.Id);
 
@@ -97,9 +96,23 @@ public class ProductsController : BaseApiController
 
         _mapper.Map(productDto, product);
 
+        if (productDto.File != null)
+        {
+            var imageResult = await _imageService.AddImageAsync(productDto.File);
+
+            if (imageResult.Error != null)
+                return BadRequest(new ProblemDetails { Title = imageResult.Error.Message });
+
+            if (!string.IsNullOrEmpty(product.PublicId))
+                await _imageService.DeleteImageAsync(product.PublicId);
+
+            product.PictureUrl = imageResult.SecureUrl.ToString();
+            product.PublicId = imageResult.PublicId;
+        }
+
         var result = await _context.SaveChangesAsync() > 0;
 
-        if (result) return NoContent();
+        if (result) return Ok(product);
 
         return BadRequest(new ProblemDetails { Title = "Problem updating product" });
     }
@@ -111,6 +124,9 @@ public class ProductsController : BaseApiController
         var product = await _context.Products.FindAsync(id);
 
         if (product == null) return NotFound();
+
+        if (!string.IsNullOrEmpty(product.PublicId))
+            await _imageService.DeleteImageAsync(product.PublicId);
 
         _context.Remove(product);
 

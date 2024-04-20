@@ -4,6 +4,7 @@ namespace API.DTOs;
 
 public class UpdateProductDto
 {
+    // I think id should be required too
     public int Id { get; set; }
     [Required] public string Name { get; set; }
 
