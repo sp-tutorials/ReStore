@@ -562,3 +562,10 @@ dotnet ef migrations add PublicIdAdded
 # --save is no longer needed
 npm install --save react-dropzone
 ```
+
+## 13.219. Publishing changes to FlyIO
+
+```bash
+fly secrets set Cloudinary__ApiSecret=REPLACEME
+git push -u origin Inventory
+```

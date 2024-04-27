@@ -12,6 +12,8 @@ primary_region = 'otp'
 [env]
   ASPNETCORE_URLS="http://+:8080"
   StripeSettings__PublishableKey="pk_test_51P5WKsLfXqAuTrul9bWRN8xC6MSnj1oZ3HEOAggt0gy8m1aGs9lzwqkkZBJimA4Sn9hlufhLB5oCm64vGB5hwhxd004Q16bqi0"
+  Cloudinary__CloudName="dbmlbtpx2"
+  Cloudinary__ApiKey="128712445149883"
 
 [http_service]
   internal_port = 8080
