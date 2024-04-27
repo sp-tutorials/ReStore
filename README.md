@@ -454,7 +454,7 @@ npm run build
 https://learn.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli
 
 ```bash
-docker run --name postgres -e POSTGRES_USER=appuser -e POSTGRES_PASSWORD=secret -p 5432:5432 -d postgres:latest
+docker run --rm --name postgres -e POSTGRES_USER=appuser -e POSTGRES_PASSWORD=secret -p 5432:5432 -d postgres:latest
 # inside API/ folder
 rm -r store.db Data/Migrations/
 dotnet ef migrations add PostgresIntial -o Data/Migrations
@@ -521,4 +521,51 @@ fly proxy 6543:5432 -a restore-sp-db
 # the database is restore_sp?sslmode=disable
 fly secrets set StripeSettings__WhSecret=REPLACE_ME
 npm run build
+```
+
+# Section 13: Roles and CRUD operations
+
+In this section
+
+* Connecting GitHub to Heroku
+* Products CRUD operations
+* AutoMapper
+* Image upload
+* Reusable form inputs
+* Using Roles in the app
+* Updating our published app in production
+
+## 13.201. Adding a create product endpoint
+
+```bash
+git checkout -b Inventory
+git push -u origin Inventory
+```
+
+## 13.205. Adding an image service
+
+```bash
+dotnet user-secrets set "Cloudinary:CloudName" "REPLACE_ME"
+dotnet user-secrets set "Cloudinary:ApiKey" "REPLACE_ME"
+dotnet user-secrets set "Cloudinary:ApiSecret" "REPLACE_ME"
+```
+
+## 13.206. Using the image service
+
+```bash
+dotnet ef migrations add PublicIdAdded
+```
+
+## 13.212. Adding a drop zone
+
+```bash
+# --save is no longer needed
+npm install --save react-dropzone
+```
+
+## 13.219. Publishing changes to FlyIO
+
+```bash
+fly secrets set Cloudinary__ApiSecret=REPLACEME
+git push -u origin Inventory
 ```
